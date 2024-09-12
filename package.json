@@ -1,0 +1,27 @@
+{
+  "name": "canil-projeto",
+  "version": "1.0.0",
+  "description": "Para estudos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VagnerLazzaretti/Canil-projeto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VagnerLazzaretti/Canil-projeto/issues"
+  },
+  "homepage": "https://github.com/VagnerLazzaretti/Canil-projeto#readme",
+  "dependencies": {
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/mustache-express": "^1.2.5",
+    "@types/node": "^22.5.4"
+  }
+}
