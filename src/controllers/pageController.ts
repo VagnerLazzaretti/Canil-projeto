@@ -1,31 +1,106 @@
 import { Request, Response } from 'express';
 
+import { Pet } from '../models/pet'
+
 export const home = (req: Request, res: Response) => {
-  res.send('homecontroller')
-  //res.render('pages/page')
+  let list = Pet.getAll()
+
+  res.render('pages/page', {
+    menu: {
+        all: true,
+        dogs: false,
+        cats: false,
+        waterAnimals: false,
+        reptiles: false
+    },
+    banner: {
+      title: 'Todos os animais',
+      bgImg: 'allanimals.jpg'
+    },
+    list
+  })
 
 }
 
 export const dogs = (req: Request, res: Response) => {
-  res.send('dogscontroller')
-  //res.render('pages/dogs')
+  let list = Pet.getFromType('dog')
+
+  res.render('pages/page', {
+    menu: {
+      all: false,
+      dogs: true,
+      cats: false,
+      waterAnimals: false,
+      reptiles: false
+    },
+    banner: {
+      title: 'Dogs',
+      bgImg: 'banner_dog.jpg'
+    },
+    list
+  })
   
 }
 
 export const cats = (req: Request, res: Response) => {
-  res.send('catscontroller')
-  //res.render('pages/cats')
+  let list = Pet.getFromType('cat')
+
+  res.render('pages/page', {
+    menu: {
+      all: false,
+      dogs: false,
+      cats: true,
+      waterAnimals: false,
+      reptiles: false
+    },
+    banner: {
+      title: 'Cats',
+      bgImg: 'banner_cat.jpg'
+    },
+    list
+  })
+  
   
 }
 
 export const waterAnimals = (req: Request, res: Response) => {
-  res.send('waterAnimalscontroller')
-  //res.render('pages/waterAnimals')
+  let list = Pet.getFromType('waterAnimal')
+
+  res.render('pages/page', {
+    menu: {
+      all: false,
+      dogs: false,
+      cats: false,
+      waterAnimals: true,
+      reptiles: false
+    },
+    banner: {
+      title: 'Water Animals',
+      bgImg: 'banner_fish.jpg'
+    },
+    list
+  })
+  
   
 }
 
 export const reptiles = (req: Request, res: Response) => {
-  res.send('reptilescontroller')
-  //res.render('pages/reptiles')
+  let list = Pet.getFromType('reptile')
+
+  res.render('pages/page', {
+    menu: {
+      all: false,
+      dogs: false,
+      cats: false,
+      waterAnimals: false,
+      reptiles: true
+    },
+    banner: {
+      title: 'Reptiles',
+      bgImg: 'banner_dog.jpg'
+    },
+    list
+  })
+  
   
 }
