@@ -14,7 +14,7 @@ export const home = (req: Request, res: Response) => {
         reptiles: false
     },
     banner: {
-      title: 'Todos os animais',
+      title: 'All animals',
       bgImg: 'allanimals.jpg'
     },
     list
@@ -97,7 +97,7 @@ export const reptiles = (req: Request, res: Response) => {
     },
     banner: {
       title: 'Reptiles',
-      bgImg: 'banner_dog.jpg'
+      bgImg: 'banner_reptile.jpg'
     },
     list
   })
